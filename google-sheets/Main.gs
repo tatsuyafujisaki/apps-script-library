@@ -1,0 +1,22 @@
+function showGetGridExample() {
+  for (var row of getGrid()) {
+    for (var column of row) {
+      Logger.log(column.getA1Notation());
+    }
+  }
+}
+
+function resetInputCellValues() {
+  const targetBackgroundColor = '#e6b8af';
+  const emoji = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣'];
+
+  for (const row of getRows2()) {
+    let manualInputCellCount = 0;
+    for (const cell of row) {
+      if (cell.getBackground() === targetBackgroundColor && manualInputCellCount < emoji.length) {
+        cell.setValue(emoji[manualInputCellCount]);
+        manualInputCellCount++;
+      }
+    }
+  }
+}
