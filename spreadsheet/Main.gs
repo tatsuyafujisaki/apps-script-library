@@ -1,11 +1,3 @@
-function showGetGridExample() {
-  for (var row of getGrid()) {
-    for (var column of row) {
-      Logger.log(column.getA1Notation());
-    }
-  }
-}
-
 function resetInputCellValues() {
   const targetBackgroundColor = '#e6b8af';
   const emoji = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣'];

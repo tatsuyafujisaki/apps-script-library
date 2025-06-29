@@ -9,12 +9,13 @@ function getGrid() {
     return sheet.getRangeList(ranges).getRanges();
   }
 
-  return getAllRows().map(row => {
+  return getAllRows().map((row) => {
     const numColumns = row.getNumColumns();
-    return Array.from({ length: numColumns }, (_, column) => row.getCell(1, column + 1));
+    return Array.from({length: numColumns}, (_, column) =>
+      row.getCell(1, column + 1)
+    );
   });
 }
-
 
 function getAllCells() {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
@@ -32,5 +33,7 @@ function getAllCells() {
 }
 
 function getCell(address) {
-  return SpreadsheetApp.getActiveSpreadsheet().getActiveSheet().getRange(address);
+  return SpreadsheetApp.getActiveSpreadsheet()
+      .getActiveSheet()
+      .getRange(address);
 }
