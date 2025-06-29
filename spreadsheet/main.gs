@@ -1,13 +1,24 @@
-function resetInputCellValues() {
-  const targetBackgroundColor = '#e6b8af';
-  const emoji = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣'];
+function resetAllSheetsInputCellValues() {
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  if (spreadsheet == null) {
+    console.log("You should call this function from a spreadsheet.");
+  }
+  SpreadsheetApp.getActiveSpreadsheet()
+    .getSheets()
+    .forEach((sheet) => {
+      resetInputCellValues(sheet);
+    });
+}
 
-  for (const row of getGrid()) {
-    let manualInputCellCount = 0;
-    for (const cell of row) {
-      if (cell.getBackground() === targetBackgroundColor && manualInputCellCount < emoji.length) {
-        cell.setValue(emoji[manualInputCellCount]);
-        manualInputCellCount++;
+function resetInputCellValues(sheet) {
+  const targetBackgroundColor = "#e6b8af";
+  const range = sheet.getDataRange();
+
+  for (let row = 1; row <= range.getNumRows(); row++) {
+    for (let column = 1; column <= range.getNumColumns(); column++) {
+      const cell = range.getCell(row, column);
+      if (cell.getBackground() === targetBackgroundColor) {
+        cell.setValue("❓");
       }
     }
   }
