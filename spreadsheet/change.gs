@@ -1,13 +1,11 @@
 function autoResizeAllSheetsColumns(sheets) {
   for (const sheet of sheets) {
-    const lastColumn = sheet.getLastColumn();
-    if (lastColumn) sheet.autoResizeColumns(1, lastColumn);
+    autoResizeAllColumns(sheet);
   }
 }
 
 function autoResizeAllColumns(sheet) {
-  const lastColumn = sheet.getLastColumn();
-  if (lastColumn) sheet.autoResizeColumns(1, lastColumn);
+  sheet.autoResizeColumns(1, sheet.getLastColumn());
 }
 
 function capitalizeFirstLetter(str) {
