@@ -1,4 +1,5 @@
-function autoResizeAllSheetsColumns(sheets) {
+function autoResizeAllSheetsColumns() {
+  const sheets = SpreadsheetApp.getActiveSpreadsheet();
   for (const sheet of sheets) {
     autoResizeAllColumns(sheet);
   }
