@@ -1,5 +1,5 @@
-function autoResizeAllColumns(sheet) {
-  sheet.autoResizeColumns(1, sheet.getLastColumn());
+function setJapaneseLocale() {
+  SpreadsheetApp.getActiveSpreadsheet().setSpreadsheetLocale("ja");
 }
 
 function freezeHeaderRow(sheet) {
