@@ -1,3 +1,7 @@
-function getHeaderlessRange(sheet) {
-  return sheet.getRange(2, 1, sheet.getLastRow() - 1, sheet.getLastColumn());
+function getDataRangeExceptHeaderRow(sheet) {
+  return excludeHeaderRow_(sheet.getDataRange());
+}
+
+function excludeHeaderRow_(range) {
+  return range.offset(1, 0, range.getNumRows() - 1, range.getNumColumns());
 }

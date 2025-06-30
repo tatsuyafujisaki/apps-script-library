@@ -1,3 +1,7 @@
+function setJapaneseLocale() {
+  SpreadsheetApp.getActiveSpreadsheet().setSpreadsheetLocale("ja");
+}
+
 function autoResizeAllSheetsColumns() {
   const sheets = SpreadsheetApp.getActiveSpreadsheet();
   for (const sheet of sheets) {
@@ -6,15 +10,9 @@ function autoResizeAllSheetsColumns() {
 }
 
 function sortSheetByColumns(sheet, ...sortColumnIndexes) {
-  const range = sheet.getDataRange();
-  const rangeWithoutHeaderRow = range.offset(
-    1,
-    0,
-    range.getNumRows() - 1,
-    range.getNumColumns()
-  );
+  const range = getDataRangeExceptFirstRow(sheet);
 
   for (let i = 0; i < sortColumnIndexes.length; i++) {
-    rangeWithoutHeaderRow.sort([{ column: sortColumnIndexes[i] }]);
+    range.sort([{ column: sortColumnIndexes[i] }]);
   }
 }
