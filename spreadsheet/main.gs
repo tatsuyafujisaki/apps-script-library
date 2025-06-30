@@ -6,11 +6,11 @@ function resetAllSheetsInputCellValues() {
   SpreadsheetApp.getActiveSpreadsheet()
     .getSheets()
     .forEach((sheet) => {
-      resetInputCellValues(sheet);
+      resetInputCellValues_(sheet);
     });
 }
 
-function resetInputCellValues(sheet) {
+function resetInputCellValues_(sheet) {
   const targetBackgroundColor = "#e6b8af";
   const range = sheet.getDataRange();
 
