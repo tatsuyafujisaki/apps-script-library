@@ -1,5 +1,5 @@
 function autoResizeAllSheetsColumnsAndRows() {
   SpreadsheetApp.getActiveSpreadsheet().forEachSheet((sheet) => {
-    autoResizeAllColumnsAndRows();
+    autoResizeAllColumnsAndRows_();
   });
 }
