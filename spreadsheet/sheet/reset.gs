@@ -1,4 +1,4 @@
-function resetInputCellValues_(sheet) {
+function resetInputCellValues_(sheet = SpreadsheetApp.getActiveSheet()) {
   const backgroundColor = "#e6b8af";
   const range = sheet.getDataRange();
 

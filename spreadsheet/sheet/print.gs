@@ -1,4 +1,4 @@
-function printAllRange_(sheet) {
+function printAllRange_(sheet = SpreadsheetApp.getActiveSheet()) {
   console.log(
     sheet
       .getRange(1, 1, sheet.getMaxRows(), sheet.getMaxColumns())

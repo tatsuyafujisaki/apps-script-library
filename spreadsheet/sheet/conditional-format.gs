@@ -1,4 +1,8 @@
-function conditionalFormat_(sheet, formula, color) {
+function conditionalFormat_(
+  formula,
+  color,
+  sheet = SpreadsheetApp.getActiveSheet()
+) {
   const rules = sheet.getConditionalFormatRules();
   rules.push(
     SpreadsheetApp.newConditionalFormatRule()
