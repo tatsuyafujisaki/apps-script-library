@@ -4,10 +4,11 @@ function autoResizeAllColumnsAndRows_(sheet = SpreadsheetApp.getActiveSheet()) {
     .autoResizeRows(1, sheet.getLastRow());
 }
 
-function setNotoSansJpFont(sheet = SpreadsheetApp.getActiveSheet()) {
+function setFont(sheet = SpreadsheetApp.getActiveSheet()) {
   sheet
     .getRange(1, 1, sheet.getMaxRows(), sheet.getMaxColumns())
-    .setFontFamily("Noto Sans JP");
+    .setFontFamily("Noto Sans JP")
+    .setFontSize(10);
 }
 
 function setVerticallyMiddle(sheet = SpreadsheetApp.getActiveSheet()) {
