@@ -11,8 +11,14 @@ function setFont(sheet = SpreadsheetApp.getActiveSheet()) {
     .setFontSize(10);
 }
 
-function setVerticallyMiddle(sheet = SpreadsheetApp.getActiveSheet()) {
+function alignVerticallyMiddle(sheet = SpreadsheetApp.getActiveSheet()) {
   sheet
     .getRange(1, 1, sheet.getMaxRows(), sheet.getMaxColumns())
     .setVerticalAlignment("middle");
+}
+
+function wrap(sheet = SpreadsheetApp.getActiveSheet()) {
+  sheet
+    .getRange(1, 1, sheet.getMaxRows(), sheet.getMaxColumns())
+    .setWrapStrategy(SpreadsheetApp.WrapStrategy.WRAP);
 }
