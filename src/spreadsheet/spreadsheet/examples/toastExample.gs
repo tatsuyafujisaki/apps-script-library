@@ -1,3 +1,3 @@
-function toast() {
-  SpreadsheetApp.getActiveSpreadsheet().toast("Toast!");
+function toastExample(spreadsheet = SpreadsheetApp.getActiveSpreadsheet()) {
+  spreadsheet.toast("🍞");
 }
