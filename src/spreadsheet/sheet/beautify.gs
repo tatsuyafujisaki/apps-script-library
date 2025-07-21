@@ -26,7 +26,3 @@ function autoResizeAllColumnsAndRows_(sheet = SpreadsheetApp.getActiveSheet()) {
     .autoResizeColumns(1, sheet.getLastColumn())
     .autoResizeRows(1, sheet.getLastRow());
 }
-
-function getAllRange_(sheet = SpreadsheetApp.getActiveSheet()) {
-  return sheet.getRange(1, 1, sheet.getMaxRows(), sheet.getMaxColumns());
-}
