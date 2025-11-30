@@ -1,5 +1,5 @@
 function formatLegalDocument() {
-  const body = DocumentApp.getActiveDocument().getBody();
+  const body = DocumentApp.getActiveDocument().setLanguage('ja').getBody();
 
   const MILLIMETERS_IN_INCH = 25.4;
   const POINTS_IN_INCH = 72;
