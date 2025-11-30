@@ -30,18 +30,3 @@ function printFormulaToBePastedOnConsolidatedSheet(
   const result = formatArray_(sheetNames, "=SORT({", "'", ";", "'!A2:E", "})");
   console.log(result);
 }
-
-function formatArray_(
-  items,
-  outerPrefix = "",
-  itemPrefix = "",
-  itemSeparator = "",
-  itemSuffix = "",
-  outerSuffix = ""
-) {
-  return (
-    outerPrefix +
-    items.map((item) => itemPrefix + item + itemSuffix).join(itemSeparator) +
-    outerSuffix
-  );
-}
