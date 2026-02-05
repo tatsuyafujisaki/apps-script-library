@@ -29,8 +29,8 @@ function exportSheetToJsonFile() {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   const rows = sheet.getDataRange().getValues();
 
-  // Exclude the header row.
-  const dataRows = rows.slice(1);
+  // Exclude the header row and rows where the third column is TRUE.
+  const dataRows = rows.slice(1).filter(row => row[2] !== true);
 
   const jsonData = dataRows.map(row => {
     return {
