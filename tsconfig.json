@@ -4,8 +4,7 @@
     "target": "ESNext",
     "rootDir": ".",
     "outDir": "build",
-    "esModuleInterop": true,
-    "noImplicitAny": false
+    "esModuleInterop": true
   },
   "include": [
     "src/**/*.ts",
