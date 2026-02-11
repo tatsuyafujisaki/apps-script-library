@@ -1,4 +1,4 @@
-let customConfig = [];
+const customConfig = [];
 let hasIgnoresFile = false;
 try {
   require.resolve('./eslint.ignores.js');
@@ -9,7 +9,15 @@ try {
 
 if (hasIgnoresFile) {
   const ignores = require('./eslint.ignores.js');
-  customConfig = [{ignores}];
+  customConfig.push({ignores});
 }
 
-module.exports = [...customConfig, ...require('gts')];
+customConfig.push({
+  files: ['**/*.ts', '**/*.tsx'],
+  rules: {
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+  },
+});
+
+module.exports = [...require('gts'), ...customConfig];

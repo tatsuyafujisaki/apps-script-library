@@ -24,5 +24,3 @@ function fillMonthCalendar() {
 
   sheet.autoResizeColumns(1, sheet.getLastColumn());
 }
-
-

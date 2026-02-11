@@ -13,7 +13,10 @@ function alignVerticallyMiddle_(sheet = SpreadsheetApp.getActiveSheet()) {
   getAllRange_(sheet).setVerticalAlignment('middle');
 }
 
-function setFont_(sheet = SpreadsheetApp.getActiveSheet(), fontFamily = 'Arial') {
+function setFont_(
+  sheet = SpreadsheetApp.getActiveSheet(),
+  fontFamily = 'Arial',
+) {
   getAllRange_(sheet).setFontFamily(fontFamily).setFontSize(10);
 }
 
