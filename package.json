@@ -1,6 +1,4 @@
 {
-  "name": "gas-toolkit",
-  "version": "0.1.0",
   "scripts": {
     "lint": "gts lint",
     "clean": "gts clean",
@@ -15,5 +13,6 @@
     "@types/node": "latest",
     "gts": "latest",
     "typescript": "latest"
-  }
+  },
+  "private": true
 }
