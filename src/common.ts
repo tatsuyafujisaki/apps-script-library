@@ -11,7 +11,7 @@ function formatArray_(
   itemPrefix = '',
   itemSeparator = '',
   itemSuffix = '',
-  outerSuffix = ''
+  outerSuffix = '',
 ): string {
   return (
     outerPrefix +

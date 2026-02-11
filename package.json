@@ -1,16 +1,8 @@
 {
-  "devDependencies": {
-    "@types/google-apps-script": "*",
-    "gts": "^7.0.0",
-    "typescript": "^5.6.3",
-    "@types/node": "^22.7.5"
-  },
   "name": "apps-script-library",
-  "version": "1.0.0",
-  "description": "```shell curl --location https://raw.githubusercontent.com/github/gitignore/refs/heads/main/Node.gitignore --output .gitignore ```",
+  "version": "0.1.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",
@@ -19,16 +11,10 @@
     "pretest": "npm run compile",
     "posttest": "npm run lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tatsuyafujisaki/apps-script-library.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/tatsuyafujisaki/apps-script-library/issues"
-  },
-  "homepage": "https://github.com/tatsuyafujisaki/apps-script-library#readme"
+  "devDependencies": {
+    "@types/google-apps-script": "latest",
+    "@types/node": "latest",
+    "gts": "latest",
+    "typescript": "latest"
+  }
 }

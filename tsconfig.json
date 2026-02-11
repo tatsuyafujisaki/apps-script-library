@@ -1,11 +1,10 @@
 {
   "extends": "./node_modules/gts/tsconfig-google.json",
   "compilerOptions": {
+    "target": "ESNext",
     "rootDir": ".",
     "outDir": "build",
-    "noImplicitAny": false,
-    "esModuleInterop": true,
-    "target": "ES2022"
+    "esModuleInterop": true
   },
   "include": [
     "src/**/*.ts",
