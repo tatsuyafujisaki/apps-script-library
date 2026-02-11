@@ -1,5 +1,7 @@
 function autoResizeAllSheetsColumnsAndRows() {
-  SpreadsheetApp.getActiveSpreadsheet().forEachSheet(sheet => {
-    autoResizeAllColumnsAndRows_();
-  });
+  SpreadsheetApp.getActiveSpreadsheet()
+    .getSheets()
+    .forEach(sheet => {
+      autoResizeAllColumnsAndRows_(sheet);
+    });
 }

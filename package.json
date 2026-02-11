@@ -1,7 +1,6 @@
 {
-  "name": "apps-script-library",
+  "name": "gas-toolkit",
   "version": "0.1.0",
-  "main": "index.js",
   "scripts": {
     "lint": "gts lint",
     "clean": "gts clean",
