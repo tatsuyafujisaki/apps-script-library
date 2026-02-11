@@ -1,11 +1,11 @@
 function printAllSheetsAllRange_() {
   SpreadsheetApp.getActiveSpreadsheet()
     .getSheets()
-    .forEach(sheet => printAllRange_(sheet));
+    .forEach(sheet => printRange_(sheet.getDataRange()));
 }
 
 function printAllSheetsDataRange_() {
   SpreadsheetApp.getActiveSpreadsheet()
     .getSheets()
-    .forEach(sheet => printDataRange_(sheet));
+    .forEach(sheet => printRange_(sheet.getDataRange()));
 }

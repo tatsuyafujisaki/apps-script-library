@@ -4,7 +4,7 @@ function printRange_(range = SpreadsheetApp.getActiveSheet().getDataRange()) {
 
 function printSheetNames(
   spreadsheet = SpreadsheetApp.getActiveSpreadsheet(),
-  sheetNamesToExclude = [],
+  sheetNamesToExclude: string[] = [],
 ) {
   console.log(
     spreadsheet

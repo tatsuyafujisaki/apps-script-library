@@ -10,7 +10,7 @@ function drawMonthCalendar() {
     .setValues([['日付', '開始時刻', '終了時刻', '備考']]);
   sheet.setFrozenRows(1);
 
-  fillDaysInColumnA_(sheet, year, month);
+  fillDaysInColumnA_(year, month, sheet);
   colorSaturdayRowsInBlue_(sheet);
   colorSundayRowsInRed_(sheet);
 

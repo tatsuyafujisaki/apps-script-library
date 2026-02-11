@@ -20,20 +20,9 @@ function fillMonthCalendar() {
 
   sheet.setFrozenRows(1);
 
-  fillDaysInColumnA_(sheet, year, month);
+  fillDaysInColumnA_(year, month, sheet);
 
   sheet.autoResizeColumns(1, sheet.getLastColumn());
 }
 
-function fillDaysInColumnA_(sheet, year, month) {
-  const daysInMonth = new Date(year, month, 0).getDate();
 
-  const dates = Array.from({length: daysInMonth}, (_, day) => [
-    new Date(year, month - 1 /* zero-based */, day + 1),
-  ]);
-
-  sheet
-    .getRange(2 /* excludes header row */, 1, dates.length, 1)
-    .setValues(dates)
-    .setNumberFormat('yyyy年m月d日(ddd)');
-}

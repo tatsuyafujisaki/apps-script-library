@@ -16,9 +16,9 @@ function fillDaysInColumnA_(
 }
 
 function colorSaturdayRowsInBlue_(sheet = SpreadsheetApp.getActiveSheet()) {
-  conditionalFormat_(sheet, '=WEEKDAY($A2)=7', '#C9DAF8');
+  conditionalFormat_('=WEEKDAY($A2)=7', '#C9DAF8', sheet);
 }
 
 function colorSundayRowsInRed_(sheet = SpreadsheetApp.getActiveSheet()) {
-  conditionalFormat_(sheet, '=WEEKDAY($A2)=1', '#F4CCCC');
+  conditionalFormat_('=WEEKDAY($A2)=1', '#F4CCCC', sheet);
 }
