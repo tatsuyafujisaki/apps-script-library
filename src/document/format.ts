@@ -5,12 +5,17 @@ function formatLegalDocument() {
   const RIGHT_MARGIN_MILLIMETERS = 15;
 
   const TOP_MARGIN_POINTS = convertMillimetersToPoints_(TOP_MARGIN_MILLIMETERS);
-  const BOTTOM_MARGIN_POINTS = convertMillimetersToPoints_(BOTTOM_MARGIN_MILLIMETERS);
-  const LEFT_MARGIN_POINTS = convertMillimetersToPoints_(LEFT_MARGIN_MILLIMETERS);
-  const RIGHT_MARGIN_POINTS = convertMillimetersToPoints_(RIGHT_MARGIN_MILLIMETERS);
+  const BOTTOM_MARGIN_POINTS = convertMillimetersToPoints_(
+    BOTTOM_MARGIN_MILLIMETERS,
+  );
+  const LEFT_MARGIN_POINTS = convertMillimetersToPoints_(
+    LEFT_MARGIN_MILLIMETERS,
+  );
+  const RIGHT_MARGIN_POINTS = convertMillimetersToPoints_(
+    RIGHT_MARGIN_MILLIMETERS,
+  );
 
-  DocumentApp
-    .getActiveDocument()
+  DocumentApp.getActiveDocument()
     .setLanguage('ja')
     .getBody()
     .setMarginTop(TOP_MARGIN_POINTS)

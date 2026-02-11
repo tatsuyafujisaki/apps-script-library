@@ -1,7 +1,7 @@
 function resetAllSheetsInputCellValues() {
   SpreadsheetApp.getActiveSpreadsheet()
     .getSheets()
-    .forEach((sheet) => {
+    .forEach(sheet => {
       resetInputCellValues_(sheet);
     });
 }

@@ -4,13 +4,13 @@ function printRange_(range = SpreadsheetApp.getActiveSheet().getDataRange()) {
 
 function printSheetNames(
   spreadsheet = SpreadsheetApp.getActiveSpreadsheet(),
-  sheetNamesToExclude = []
+  sheetNamesToExclude = [],
 ) {
   console.log(
     spreadsheet
       .getSheets()
-      .map((sheet) => sheet.getName())
-      .filter((sheetName) => !sheetNamesToExclude.includes(sheetName))
-      .sort()
+      .map(sheet => sheet.getName())
+      .filter(sheetName => !sheetNamesToExclude.includes(sheetName))
+      .sort(),
   );
 }

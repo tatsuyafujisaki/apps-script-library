@@ -1,5 +1,5 @@
 function importJsonFileToSheet() {
-  const fileName = "Text Substitutions.json";
+  const fileName = 'Text Substitutions.json';
 
   const files = DriveApp.getFilesByName(fileName);
 
@@ -11,13 +11,10 @@ function importJsonFileToSheet() {
   const content = file.getBlob().getDataAsString();
   const json = JSON.parse(content);
 
-  const data = [["shortcut", "phrase"]];
+  const data = [['shortcut', 'phrase']];
 
   json.forEach(item => {
-    data.push([
-      item.shortcut || "",
-      item.phrase || ""
-    ]);
+    data.push([item.shortcut || '', item.phrase || '']);
   });
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   sheet.clear();
@@ -25,7 +22,7 @@ function importJsonFileToSheet() {
 }
 
 function exportSheetToJsonFile() {
-  const fileName = "Text Substitutions.json";
+  const fileName = 'Text Substitutions.json';
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   const rows = sheet.getDataRange().getValues();
 
@@ -34,8 +31,8 @@ function exportSheetToJsonFile() {
 
   const jsonData = dataRows.map(row => {
     return {
-      "shortcut": row[0] || "",
-      "phrase": row[1] || ""
+      shortcut: row[0] || '',
+      phrase: row[1] || '',
     };
   });
 
@@ -46,6 +43,6 @@ function exportSheetToJsonFile() {
     const file = files.next();
     file.setContent(jsonString);
   } else {
-    DriveApp.createFile(fileName, jsonString, "text/plain");
+    DriveApp.createFile(fileName, jsonString, 'text/plain');
   }
 }

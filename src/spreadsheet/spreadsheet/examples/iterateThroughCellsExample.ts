@@ -1,5 +1,5 @@
 function iterateThroughCellsExample(
-  range = SpreadsheetApp.getActiveSheet().getDataRange()
+  range = SpreadsheetApp.getActiveSheet().getDataRange(),
 ) {
   console.log(range.getA1Notation());
   for (let row = 1; row <= range.getNumRows(); row++) {

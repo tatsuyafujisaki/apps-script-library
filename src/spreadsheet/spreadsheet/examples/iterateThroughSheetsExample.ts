@@ -1,6 +1,6 @@
 function iterateThroughSheetsExample(
   spreadsheet = SpreadsheetApp.getActiveSpreadsheet(),
-  sheetNamesToExclude = []
+  sheetNamesToExclude = [],
 ) {
   console.log(spreadsheet.getName());
   for (const sheet of spreadsheet.getSheets()) {

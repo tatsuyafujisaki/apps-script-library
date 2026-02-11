@@ -1,7 +1,7 @@
 function conditionalFormat_(
   formula,
   color,
-  sheet = SpreadsheetApp.getActiveSheet()
+  sheet = SpreadsheetApp.getActiveSheet(),
 ) {
   const rules = sheet.getConditionalFormatRules();
   rules.push(
@@ -9,7 +9,7 @@ function conditionalFormat_(
       .setRanges([getHeaderlessRange_(sheet)])
       .whenFormulaSatisfied(formula)
       .setBackground(color)
-      .build()
+      .build(),
   );
   sheet.setConditionalFormatRules(rules);
 }

@@ -1,4 +1,4 @@
 function activateSheetByName_(name) {
-  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   spreadsheet.setActiveSheet(spreadsheet.getSheetByName(name));
 }

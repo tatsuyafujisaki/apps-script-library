@@ -1,12 +1,12 @@
-const specialSheetNames = ["まとめ", "勘定科目一覧", "勘定科目別合計額"];
+const specialSheetNames = ['まとめ', '勘定科目一覧', '勘定科目別合計額'];
 
 function sortSheets(spreadsheet = SpreadsheetApp.getActiveSpreadsheet()) {
   const prioritySheets = spreadsheet
     .getSheets()
-    .filter((sheet) => specialSheetNames.includes(sheet.getName()));
+    .filter(sheet => specialSheetNames.includes(sheet.getName()));
   const nonPrioritySheets = spreadsheet
     .getSheets()
-    .filter((sheet) => !specialSheetNames.includes(sheet.getName()));
+    .filter(sheet => !specialSheetNames.includes(sheet.getName()));
 
   prioritySheets.forEach((sheet, index) => {
     spreadsheet.setActiveSheet(sheet);
@@ -21,12 +21,12 @@ function sortSheets(spreadsheet = SpreadsheetApp.getActiveSpreadsheet()) {
 }
 
 function printFormulaToBePastedOnConsolidatedSheet(
-  spreadsheet = SpreadsheetApp.getActiveSpreadsheet()
+  spreadsheet = SpreadsheetApp.getActiveSpreadsheet(),
 ) {
   const sheetNames = spreadsheet
     .getSheets()
-    .map((sheet) => sheet.getName())
-    .filter((sheetName) => !specialSheetNames.includes(sheetName));
-  const result = formatArray_(sheetNames, "=SORT({", "'", ";", "'!A2:E", "})");
+    .map(sheet => sheet.getName())
+    .filter(sheetName => !specialSheetNames.includes(sheetName));
+  const result = formatArray_(sheetNames, '=SORT({', "'", ';', "'!A2:E", '})');
   console.log(result);
 }

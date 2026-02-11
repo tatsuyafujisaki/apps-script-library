@@ -1,5 +1,5 @@
 function beautifySpreadsheet(
-  spreadsheet = SpreadsheetApp.getActiveSpreadsheet()
+  spreadsheet = SpreadsheetApp.getActiveSpreadsheet(),
 ) {
   for (const sheet of spreadsheet.getSheets()) {
     alignVerticallyMiddle_(sheet);
@@ -10,7 +10,7 @@ function beautifySpreadsheet(
 }
 
 function alignVerticallyMiddle_(sheet = SpreadsheetApp.getActiveSheet()) {
-  getAllRange_(sheet).setVerticalAlignment("middle");
+  getAllRange_(sheet).setVerticalAlignment('middle');
 }
 
 function setFont_(sheet = SpreadsheetApp.getActiveSheet(), fontFamily) {
