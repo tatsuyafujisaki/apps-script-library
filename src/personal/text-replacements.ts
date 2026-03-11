@@ -1,26 +1,3 @@
-function importJsonFileToSheet() {
-  const fileName = 'Text Substitutions.json';
-
-  const files = DriveApp.getFilesByName(fileName);
-
-  if (!files.hasNext()) {
-    return;
-  }
-
-  const file = files.next();
-  const content = file.getBlob().getDataAsString();
-  const json = JSON.parse(content);
-
-  const data = [['shortcut', 'phrase']];
-
-  json.forEach(item => {
-    data.push([item.shortcut || '', item.phrase || '']);
-  });
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  sheet.clear();
-  sheet.getRange(1, 1, data.length, data[0].length).setValues(data);
-}
-
 function exportSheetToJsonFile() {
   const fileName = 'Text Substitutions.json';
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
